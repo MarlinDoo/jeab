@@ -47,16 +47,42 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
+  .state('app.playlists', {
+    url: "/playlists",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/playlists.html",
+        controller: 'PlaylistsCtrl'
       }
-    })
-
+    }
+  })
+  .state('app.departments', {
+    url: "/departments",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/departments.html",
+        controller : 'DepartmentsController'
+      }
+    }
+  })
+  .state('app.department', {
+    url: "/departments/:departmentId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/department.html",
+        controller : 'DepartmentController'
+      }
+    }
+  })
+  .state('app.tabs', {
+    url: "/tabs",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/tabs.html",
+        controller : 'TabsPageController'
+      }
+    }
+  })
   .state('app.single', {
     url: "/playlists/:playlistId",
     views: {

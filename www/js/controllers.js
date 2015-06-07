@@ -1,14 +1,14 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-  
+
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
+
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -50,7 +50,44 @@ angular.module('starter.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+
+.controller('DepartmentsController', function($scope, $stateParams) {
+  $scope.departments = [
+    { id: 1, name: '上海道勤软件有限公司', type: '总公司', level: 0,
+      offspring: [
+        { id: 11, name: '上海研发中心', type: '分公司', level: 1, offspring: []},
+        { id: 12, name: '北京研发中心', type: '分公司', level: 1, offspring: [
+          { id: 121, name: '财务部', type: '职能部门', level: 2, offspring: []},
+          { id: 122, name: '人力资源部', type: '职能部门', level: 2, offspring: []},
+          { id: 123, name: '前端开发部', type: '开发团队', level: 2, offspring: []},
+          { id: 124, name: '后台开发部', type: '开发团队', level: 2, offspring: []}
+        ]},
+      ]
+    },
+    { id: 1, name: '爱丽丝娱乐有限公司', type: '总公司', level: 0,
+      offspring: [
+        { id: 11, name: '北京KTV集群', type: '事业部', level: 1, offspring: []},
+      ]
+    }
+  ];
+})
+
+.controller('DepartmentController', function($scope, $stateParams) {
+})
+
+.controller('TabsPageController', [ '$scope', '$state', function($scope, $state) {
+    $scope.navTitle = 'Tab Page';
+
+    $scope.leftButtons = [{
+        type: 'button-icon icon ion-navicon',
+        tap: function(e) {
+            $scope.toggleMenu();
+        }
+    }];
+}])
+;
