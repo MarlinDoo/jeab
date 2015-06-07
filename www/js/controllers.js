@@ -57,7 +57,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DepartmentsController', function($scope, $stateParams) {
-  $scope.departments = [
+  /*$scope.departments = [
     { id: 1, name: '上海道勤软件有限公司', type: '总公司', level: 0,
       offspring: [
         { id: 11, name: '上海研发中心', type: '分公司', level: 1, offspring: []},
@@ -74,6 +74,15 @@ angular.module('starter.controllers', [])
         { id: 11, name: '北京KTV集群', type: '事业部', level: 1, offspring: []},
       ]
     }
+  ];*/
+  $scope.departments = [
+    { id: 1, name: '上海道勤软件有限公司', type: '总公司', level: 0 },
+    { id: 11, name: '上海研发中心', type: '分公司', level: 1, parent_id: 1 },
+    { id: 12, name: '北京研发中心', type: '分公司', level: 1, parent_id: 1 },
+    { id: 121, name: '财务部', type: '职能部门', level: 2, parent_id: 12},
+    { id: 122, name: '人力资源部', type: '职能部门', level: 2, parent_id: 12},
+    { id: 2, name: '爱丽丝娱乐有限公司', type: '总公司', level: 0, parent_id: 1},
+    { id: 21, name: '北京KTV集群', type: '事业部', level: 1, parent_id: 2}
   ];
 })
 

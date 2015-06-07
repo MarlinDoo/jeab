@@ -7674,3 +7674,13 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.dept-item span {
+  margin-right: 4px;
+  color: #11c1f3; }
+
+.dept-level-1 {
+  text-indent: 10px; }
+
+.dept-level-2 {
+  text-indent: 20px; }

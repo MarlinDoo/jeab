@@ -1,8 +1,8 @@
 <ion-view view-title="组织结构">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="department in departments" href="#/app/departments/{{departments.id}}">
-        <li class="ion-person-stalker"></li>{{department.name}}
+      <ion-item ng-repeat="department in departments" href="#/app/departments/{{department.id}}" ng-class="'dept-item dept-level-{{department.level}}'">
+        <span class="ion-person-stalker"></span>{{department.name}}
       </ion-item>
     </ion-list>
   </ion-content>

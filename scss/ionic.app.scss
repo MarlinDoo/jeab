@@ -21,3 +21,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.dept-item{
+  span{ margin-right:4px; color: $calm;}
+}
+
+.dept-level-1{
+  text-indent: 10px;
+}
+
+.dept-level-2{
+  text-indent: 20px;
+}
